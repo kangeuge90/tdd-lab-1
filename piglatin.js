@@ -1,7 +1,5 @@
 "use strict";
-
-
-
+// Internet Solution -----------------------
 function translator(str) {
     let vowels = ['a', 'e', 'i', 'o', 'u'];
     let newStr = "";
@@ -21,8 +19,7 @@ function translator(str) {
 
 }
 
-translator("BIG");
-translator('pig');
+
 
 module.exports = translator;
 
@@ -47,3 +44,34 @@ module.exports = translator;
 //       different vowels
 // words that start with two consonants
 // words that start with more consonants
+
+
+// My Solution -----------------------
+// function translator(str) {
+//     let vowels = ['a', 'e', 'i', 'o', 'u'];
+//     let newStr = "";
+
+//     str = str.toLowerCase();
+//     // check first letter if vowel or not
+//     //          if it is a vowel: simply add "way" to the end
+//     if (vowels.indexOf(str[0]) > -1) { // if the first letter is a vowel
+//         newStr = `${str}way`;
+//         console.log(newStr);
+//         return newStr;
+//     }
+//     if (vowels.indexOf(str[0]) < 0) { // if the first letter is a consonant
+//         for (let i = 0; i < str.length; i++) {
+
+//         }
+
+//     } else { // word with no vowels
+
+//     }
+
+//     // if consonant:  move all of the consonants that appear before the first vowel to the end.
+//     //                                      then add "ay" to the end of the word.
+
+//     // if only consonants and no vowels:  add "vray" to the end.
+
+
+// }

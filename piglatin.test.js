@@ -2,47 +2,93 @@ const translator = require('./piglatin');
 
 describe('translator', function() {
 
-    // general test w/ vowel beginning words
-    test('"pig" should return as "igpay"', function() {
-        expect(translator("pig").toEqual('igpay'));
-    });
+    // words that start with vowels… write tests for several different starting vowels
+    test('words that start with "a"', function() {
+        expect(translator('action').toBe('actionway'));
+    })
+
+    test('words that start with "e"', function() {
+        expect(translator('elect').toBe('electway'));
+    })
+
+    test('words that start with "i"', function() {
+        expect(translator('idea').toBe('ideaway'));
+    })
 
 
-    // test to accept multiple words
-    test("'words aplenty' should return as 'ordsway aplenty'", function() {
-        expect(translator('words aplenty').toEqual('ordsway aplenty'));
-    });
+    // words that start with vowels with capital letters are converted to lowercase
+
+    test('words that start with "A"', function() {
+        expect(translator('Arrive').toBe('arriveway'));
+    })
+
+    test('words that start with "O"', function() {
+        expect(translator('Octopus').toBe('octopusway'));
+    })
+
+    test('words that start with "U"', function() {
+        expect(translator('Under').toBe('underway'));
+    })
+
+    // words that start with one consonant… write tests for the second letter being several 
+    //       different vowels
+    // consonant-a
+    test('word that starts with consonant and then lowercase vowel', function() {
+            expect(translator('way').toBe('ayway'));
+        })
+        // consonant-u
+    test('word that starts with consonant and then vowel', function() {
+        expect(translator('bug').toBe('ugbay'));
+    })
+
+    // words that start with two consonants
+    test('words that start with two consonants "flay"', function() {
+        expect(translator('flay').toBe('ayflay'));
+    })
+
+    test('words that start with two consonants "play"', function() {
+        expect(translator('play').toBe('ayplay'));
+    })
+
+    test('words that start with two consonants "tray"', function() {
+        expect(translator('tray').toBe('aytray'));
+    })
+
+    // words that start with more consonants
+    test('words that start with three consonants "shred"', function() {
+        expect(translator('shred').toBe('edshray'));
+    })
+
+    test('words that start with three consonants "splash"', function() {
+        expect(translator('splash').toBe('ashsplay'));
+    })
+
+    // words with no vowels : does it error, does it have a new rule?
+    // test('word with no vowels "glycyl"', function() {
+    //     expect(translator('glycyl').toBe(''));
+    // }),
 
 
-    // test to accept only strings
 
-    // test('only strings should be accepted, other inputs will give error alert', function() {
-    //     expect(translator("1042021").toEqual(""));
-    // });
-
-    // test to reject empty answer
-
-    // test('no answer should give error alert', function() {
-    //     expect(translator("").toEqual(""))
-
-    // });
 
 
     // OPTIONAL OBJ-----------------------------------------------------------------
 
-    // test to convert to lower case
-    test('"BIG" should return "igbay"', function() {
-        expect(translator("BIG").toBe("igbay"));
-    });
+    // TEST:non string entrees, digits
 
-    // NEW general test w/ vowel beginning words implemented, old test should be obsolete
+    // TEST: multiple word strings (consonant start word, vowel start word)
+    //                              (vowel start word, consonant start word)
+    //                              (consonant, consonant)
+    //                              (vowel, vowel)
+
+    // NEW TEST: general test w/ vowel beginning words implemented, old test should be obsolete
 
     // test("", function() {
 
     // });
 
 
-    // If a word starts with a consonant, move all of the consonants that appear 
+    // TEST: If a word starts with a consonant, move all of the consonants that appear 
     //      before the first vowel to the end of the word, then add “ay” to the end of the word.
 
     // test("", function() {
