@@ -11,6 +11,11 @@ function translator(str) {
         return newStr;
     } else {
         let firstMatch = str.match(/[aeiou]/g) || 0;
+        // regular expression, searches string - find me one thing that matches the bracket values
+        // g meaning global - tests all of the matches,  without g only returns first match
+        // if str.match returns something falsey, return 0, firstMatch gets set to 0
+        // RegEx (google for more)
+
         let vowel = str.indexOf(firstMatch[0]);
         newStr = str.substring(vowel) + str.substring(0, vowel) + "ay";
         console.log(newStr);

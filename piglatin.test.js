@@ -4,68 +4,68 @@ describe('translator', function() {
 
     // words that start with vowels… write tests for several different starting vowels
     test('words that start with "a"', function() {
-        expect(translator('action').toBe('actionway'));
+        expect(translator('action')).toEqual('actionway');
     })
 
     test('words that start with "e"', function() {
-        expect(translator('elect').toBe('electway'));
+        expect(translator('elect')).toBe('electway');
     })
 
     test('words that start with "i"', function() {
-        expect(translator('idea').toBe('ideaway'));
+        expect(translator('idea')).toBe('ideaway');
     })
 
 
     // words that start with vowels with capital letters are converted to lowercase
 
     test('words that start with "A"', function() {
-        expect(translator('Arrive').toBe('arriveway'));
+        expect(translator('Arrive')).toBe('arriveway');
     })
 
     test('words that start with "O"', function() {
-        expect(translator('Octopus').toBe('octopusway'));
+        expect(translator('Octopus')).toBe('octopusway');
     })
 
     test('words that start with "U"', function() {
-        expect(translator('Under').toBe('underway'));
+        expect(translator('Under')).toBe('underway');
     })
 
     // words that start with one consonant… write tests for the second letter being several 
     //       different vowels
     // consonant-a
     test('word that starts with consonant and then lowercase vowel', function() {
-            expect(translator('way').toBe('ayway'));
+            expect(translator('way')).toBe('ayway');
         })
         // consonant-u
     test('word that starts with consonant and then vowel', function() {
-        expect(translator('bug').toBe('ugbay'));
+        expect(translator('bug')).toBe('ugbay');
     })
 
     // words that start with two consonants
     test('words that start with two consonants "flay"', function() {
-        expect(translator('flay').toBe('ayflay'));
+        expect(translator('flay')).toBe('ayflay');
     })
 
     test('words that start with two consonants "play"', function() {
-        expect(translator('play').toBe('ayplay'));
+        expect(translator('play')).toBe('ayplay');
     })
 
     test('words that start with two consonants "tray"', function() {
-        expect(translator('tray').toBe('aytray'));
+        expect(translator('tray')).toBe('aytray');
     })
 
     // words that start with more consonants
     test('words that start with three consonants "shred"', function() {
-        expect(translator('shred').toBe('edshray'));
+        expect(translator('shred')).toBe('edshray');
     })
 
     test('words that start with three consonants "splash"', function() {
-        expect(translator('splash').toBe('ashsplay'));
+        expect(translator('splash')).toBe('ashsplay');
     })
 
     // words with no vowels : does it error, does it have a new rule?
     // test('word with no vowels "glycyl"', function() {
-    //     expect(translator('glycyl').toBe(''));
+    //     expect(translator('glycyl')).toBe('');
     // }),
 
 
